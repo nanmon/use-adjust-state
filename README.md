@@ -2,6 +2,32 @@
 
 This is a custom hook that addresses the specific case described [here in the official React docs](https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes), but... some people might be a bit uncomfortable updating state on render and are more familiar with the mental model of useEffect.
 
+## Install
+
+```
+npm install use-adjust-state
+```
+
+## Usage example
+
+```jsx
+import useAdjustState from "use-adjust-state";
+
+/**
+ * User selects a Something from a list and this input focus in
+ * each time the user selects a Something, the input autofills with the current Something's name
+ */
+function EditNameInput({ currentName }) {
+	const [name, setName] = useState(currentName);
+
+	useAdjustState(() => {
+		setName(currentName);
+	}, [currentName]);
+
+	return <input value={name} onChange={(e) => setName(e.target.value)} />;
+}
+```
+
 ## A little bit of background
 
 Quoting from the React docs
