@@ -1,5 +1,5 @@
 {
-  "name": "use-adjust-state-when-prop-changes",
+  "name": "use-adjust-state",
   "version": "1.0.0",
   "description": "custom react hook similar to useEffect for adjusting some state when a prop changes https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes",
   "main": "index.js",

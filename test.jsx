@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { render, screen } from "@testing-library/react";
-import useAdjustStateWhenPropChanges from ".";
+import useAdjustState from ".";
 
-describe("useAdjustStateWhenPropChanges", () => {
+describe("useAdjustState", () => {
 	function Test({ someProp = "init" }) {
 		const [someState, setSomeState] = useState(someProp);
 		const [adjustedTimes, setAdjustedTimes] = useState(0);
-		useAdjustStateWhenPropChanges(() => {
+		useAdjustState(() => {
 			setSomeState(someProp);
 			setAdjustedTimes((times) => times + 1);
 		}, [someProp]);

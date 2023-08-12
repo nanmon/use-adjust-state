@@ -10,13 +10,13 @@ import { useRef } from "react";
  * 	const [selection, setSelection] = useState(null);
  *
  * 	// Adjust the state while rendering
- * 	useAdjustStateWhenPropChanges(() => {
+ * 	useAdjustState(() => {
  * 		setSelection(null);
  * 	}, [items]);
  * 	// ...
  * }
  */
-export default function useAdjustStateWhenPropChanges(fn, deps) {
+export default function useAdjustState(fn, deps) {
 	const prevDeps = useRef(deps);
 	const depsChanged = prevDeps.current.some(
 		(pdep, index) => pdep !== deps[index]

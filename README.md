@@ -1,4 +1,4 @@
-# useAdjustStateWhenPropChanges
+# useAdjustState
 
 This is a custom hook that addresses the specific case described [here in the official React docs](https://react.dev/learn/you-might-not-need-an-effect#adjusting-some-state-when-a-prop-changes), but... some people might be a bit uncomfortable updating state on render and are more familiar with the mental model of useEffect.
 
@@ -42,7 +42,7 @@ function List({ items }) {
 }
 ```
 
-## What useAdjustStateWhenPropChanges does
+## What useAdjustState does
 
 The solution that the React docs gives might be good enough for you and then you don't need this custom hook, but if you are not comfortable changing your accused-to-be-used-wrongly-used useEffect for their solution, here's another solution
 
@@ -52,14 +52,14 @@ function List({ items }) {
 	const [selection, setSelection] = useState(null);
 
 	// Better: Adjust the state while rendering
-	useAdjustStateWhenPropChanges(() => {
+	useAdjustState(() => {
 		setSelection(null);
 	}, [items]);
 	// ...
 }
 ```
 
-Just change your useEffect for useAdjustStateWhenPropChanges and you're all set! If you compare the first code snipet with the useEffect and this one you can see that the hook name is the only difference
+Just change your useEffect for useAdjustState and you're all set! If you compare the first code snipet with the useEffect and this one you can see that the hook name is the only difference
 
 ## Differences to useEffect
 
