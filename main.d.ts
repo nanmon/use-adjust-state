@@ -1,0 +1,1 @@
+export default function useAdjustState(fn: () => void, deps: unknown[]): void

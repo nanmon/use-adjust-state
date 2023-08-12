@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { render, screen } from "@testing-library/react";
-import useAdjustState from ".";
+import useAdjustState from "./main.js";
 
 describe("useAdjustState", () => {
 	function Test({ someProp = "init" }) {
